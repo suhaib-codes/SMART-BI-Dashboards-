@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global base ─────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar — Webkit */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme('colors.app-bg');
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.sidebar-text');
+    border-radius: 3px;
+    transition: background 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.accent');
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.sidebar-text') theme('colors.app-bg');
+  }
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Arabic font helper */
+  .font-ar {
+    font-family: theme('fontFamily.arabic');
+  }
+
+  /* Subtle shimmer skeleton */
+  .skeleton {
+    @apply animate-pulse bg-app-border rounded-lg;
+  }
+
+  /* Gradient banner */
+  .banner-gradient {
+    background: linear-gradient(135deg, theme('colors.primary') 0%, theme('colors.accent-dark') 100%);
+  }
+
+  /* Dashboard gradient strip */
+  .card-gradient-strip {
+    background: linear-gradient(90deg, theme('colors.primary'), theme('colors.accent-dark'));
+  }
+}

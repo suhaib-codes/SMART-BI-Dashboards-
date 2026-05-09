@@ -1,0 +1,26 @@
+# Dependencies — never push these, client runs npm install to recreate them
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+client/dist-ssr/
+
+# Environment / secrets
+.env
+server/.env
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.suo
+*.user
